@@ -5,7 +5,7 @@ module.exports = {
   devtool: 'eval',
   entry: [
     'webpack-hot-middleware/client',
-    './src/index'
+    './app/index'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -19,25 +19,30 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
-        loaders: ['babel'],
-        include: path.join(__dirname, 'src')
+        test: /\.js[x]?$/,
+        include: path.resolve(__dirname, 'app'),
+        exclude: [/node_modules/, /phaser\.min\.js/],
+        loaders: ['babel-loader']
       },
       {
-        test: /\.(png|jpg)$/,
-        loaders: ['url?limit=100000'],
-        include: path.join(__dirname, 'assets')
-      },
-
-      // pixi uses fs.readFileSync and require()s json files
-      {
-        test: /\.js$/,
-        loaders: ['transform?brfs'],
-        include: /node_modules/
+        test: /\.jpe?g$|\.svg$|\.png$/,
+        exclude: /node_modules/,
+        loader: "file-loader?name=[path][name].[ext]"
       },
       {
         test: /\.json$/,
-        loaders: ['json']
+        exclude: /node_modules/,
+        loader: "json"
+      },
+      {
+        test: /\.json$/,
+        include: path.join(__dirname, 'node_modules', 'pixi.js'),
+        loader: 'json',
+      }
+    ],
+    postLoaders: [
+      {
+        loader: "transform?brfs"
       }
     ]
   }

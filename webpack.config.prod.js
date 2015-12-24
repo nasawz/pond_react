@@ -4,7 +4,7 @@ var webpack = require('webpack');
 module.exports = {
   devtool: 'source-map',
   entry: [
-    './src/index'
+    './app/index'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -27,7 +27,7 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.js[x]?$/,
         loaders: ['babel'],
         include: path.join(__dirname, 'src')
       },
@@ -39,7 +39,7 @@ module.exports = {
 
       // pixi uses fs.readFileSync and require()s json files
       {
-        test: /\.js$/,
+        test: /\.js[x]?$/,
         loaders: ['transform?brfs'],
         include: /node_modules/
       },
