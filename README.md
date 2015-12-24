@@ -13,13 +13,14 @@
 [演示地址](http://p.baleina.cn/spa/pond_react/)
 
 微信扫码观看
+
 ![qrcod](http://ces00.b0.upaiyun.com/2015/12/24/upload_cb9d3b72b6d25f56b7b48665de905795.jpg)
 
 
 
 ### 源码地址：
-[https://coding.net/u/nasawz/p/pond/git](Demo1源码)
-[https://coding.net/u/nasawz/p/pond_react/git](Demo2源码)
+[Demo1源码](https://coding.net/u/nasawz/p/pond/git)
+[Demo2源码](https://coding.net/u/nasawz/p/pond_react/git)
 
 ### 参考资料
 * https://github.com/Izzimach/react-pixi
