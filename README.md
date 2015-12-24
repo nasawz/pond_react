@@ -1,73 +1,28 @@
-React PIXI Boilerplate
-=====================
+# 用 react + PIXI.js 制作一个鱼塘
 
-This is just [react-transform-boilerplate][rtb] with react-pixi and pixi.js, plus the required webpack config to get assets working and pixi.js loading. 
+> 最近在看[http://www.pixijs.com/](PIXI)相关的资料，参考了官方的[http://www.goodboydigital.com/pixijs/examples/15/indexAll.html](example)做了两个demo练练手。
 
-For an example side scrolling game built on this boilerplate and reflux see [react-pixi-play][react-pixi-play].
+## Demo1：
+* 用pixi.js + es6 + webpack构建一个原生的pixi项目；
+[演示地址](http://p.baleina.cn/spa/pond/)
 
-[rtb]: https://github.com/gaearon/react-transform-boilerplate
-[react-pixi-play]: https://github.com/brigand/react-pixi-play
+## Demo2：
+* 用pixi.js + es6 + webpack + react 构建一个与react混合的项目；
+* 适配手机浏览器
 
-A *new* Webpack boilerplate with:
+[演示地址](http://p.baleina.cn/spa/pond_react/)
 
-* hot reloading React components;
-* error handling inside component `render()` function;
-* error handling for syntax errors (thanks, **[@glenjamin](https://github.com/glenjamin)**!)
-* react-pixi integration
-
-Built with **[babel-plugin-react-transform](https://github.com/gaearon/babel-plugin-react-transform)** and a few custom transforms.  
-**[Does not](https://medium.com/@dan_abramov/the-death-of-react-hot-loader-765fa791d7c4)** use React Hot Loader.
-
-[![react-transform channel on slack](https://img.shields.io/badge/slack-react--transform%40reactiflux-61DAFB.svg?style=flat-square)](http://www.reactiflux.com)
-
-## Demo
-
-![](http://i.imgur.com/AhGY28T.gif)
-
-```
-git clone https://github.com/gaearon/react-transform-boilerplate.git
-cd react-transform-boilerplate
-npm install
-npm start
-open http://localhost:3000
-```
-
-Then go ahead and edit files inside `src` (any file except `index.js`).
-
-## What’s Inside
+微信扫码观看
+![qrcod](http://ces00.b0.upaiyun.com/2015/12/24/upload_cb9d3b72b6d25f56b7b48665de905795.jpg)
 
 
-The component instrumentation is implemented on top of **[babel-plugin-react-transform](https://github.com/gaearon/babel-plugin-react-transform)**:
 
-* **[react-transform-hmr](https://github.com/gaearon/react-transform-hmr)** handles hot reloading
-* **[react-transform-catch-errors](https://github.com/gaearon/react-transform-catch-errors)** catches component errors
+### 源码地址：
+[https://coding.net/u/nasawz/p/pond/git](Demo1源码)
+[https://coding.net/u/nasawz/p/pond_react/git](Demo2源码)
 
-The syntax errors are displayed in an overlay by **[@glenjamin](https://github.com/glenjamin)**’s **[webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware)** which replaces Webpack Dev Server.
-
-## Troubleshooting
-
-### I can’t serve images / use different HTML file / etc
-
-This boilerplate is just a Webpack bundle served by an Express server. It’s not meant to demonstrate every feature of either project. Please consult Webpack and Express docs to learn how to serve images, or bundle them into your JavaScript application.
-
-### I don’t see the syntax error overlay!
-
-Make sure your react-app is not attached to `document.body` as the client overlay provided by [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) will render into `document.body`.
-Attaching the React root node to `document.body` requires extra caution, as many third-party packages will append their markup to the body as well. React will replace the entire contents in the body on every re-render. Thus you will not see the additional markup.
-
-It’s always better to render your React app in a `#root` DOM element.
-
-```js
-import React from 'react'
-import { App } from 'app'
-
-React.render(<App />, document.getElementById('root'))
-```
-
-## Discussion
-
-You can discuss React Transform and related projects in **#react-transform** channel on [Reactiflux Slack](http://reactiflux.com).
-
-## License
-
-CC0 (public domain)
+### 参考资料
+* https://github.com/Izzimach/react-pixi
+* https://github.com/edwinwebb/pixi-seed
+* http://www.pixijs.com/
+* http://pixijs.github.io/docs/
